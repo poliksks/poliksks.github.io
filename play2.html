@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>FlexEasy</title>
+</head>
+<body>
+	<div class="all_content">
+    <header>   
+        <h2> FlexEasy - Веселый и простой способ освоить Flexbox</h2>
+             <ul>
+         <li>
+             <a href="index.html">главная</a>
+         </li>
+         <li>
+             <a href="guide.html">справочник</a>
+                 </li>
+         <li>
+             <a href="play1_1.html">играть</a>
+         </li>
+     </ul>
+     
+ </header>
+ 
+<main class="play2">
+  <div id="target"></div>
+	<style>
+		#game-board {
+			width: 300px;
+			height: 300px;
+			background-color: lightgray;
+			position: relative;
+		}
+
+		#square-red {
+			width: 50px;
+			height: 50px;
+			background-image: url('img/1.jpg');
+			background-repeat: no-repeat;
+			background-size: 50px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#square-blue {
+			width: 50px;
+			height: 50px;
+			background-image: url('img/2.jpg');
+			background-repeat: no-repeat;
+			background-size: 50px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+
+		#goal-square-red{
+			width: 50px;
+			height: 50px;
+			border: 1px solid red;
+			position: absolute;
+			/*top: calc(50% - 25px);*/
+			left: calc(50% - 25px);
+			box-sizing: border-box;
+		}
+		#goal-square-blue{
+			width: 50px;
+			height: 50px;
+			border: 1px solid darkblue;
+			position: absolute;
+			top: calc(50% - 25px);
+			left: calc(50% - 25px);
+			box-sizing: border-box;
+			display: none;
+		}
+		#command2{
+			display: none;
+		}
+	</style>
+</head>
+	<h1>Приключение квадрата</h1>
+	<div class="game-container">
+		<div id="game-board">
+			<div id="square-red"></div>
+			<div id="square-blue"></div>
+			<div id="goal-square-red"></div>
+			<div id="goal-square-blue"></div>
+		</div>
+
+		<div class="game-form-block" id="game-form-block">
+			<form class="game-form" id="game-form">
+				<label
+					id="command-label"
+					for="command1">
+				</label>
+				<input class="game-command-field"
+					   id="command1"
+					   name="command1"/>
+				<textarea
+					class="game-command-field"
+					id="command2"
+					name="command2"
+					cols="30"
+					rows="3">
+				</textarea>
+				<span>}</span>
+				<button type="submit">Выполнить</button>
+			</form>
+			<div id="game-result">
+		
+			</div>
+		</div>
+	</div>
+	<!-- Это для проверки правильности команд, можно удалить-->
+<!--	<div style="display:flex; width: 300px; background: gray; height: 300px">-->
+<!--		<div style="width: 50px; height: 50px; background: red"></div>-->
+<!--		<div style="width: 50px; height: 50px; background: blue"></div>-->
+<!--	</div>-->
+
+	<script>
+ 		const gameBoard = document.getElementById('game-board');
+ 		const squareRed = document.getElementById('square-red');
+		const squareBlue = document.getElementById('square-blue');
+		const squareGoalRed = document.getElementById('goal-square-red');
+		const squareGoalBlue = document.getElementById('goal-square-blue');
+		const label = document.getElementById('command-label');
+		let currentLevel = 0;
+		const arrLevelsText = [
+			": Верни квадрат в правильное место<br> .container {<br> display: flex;<br>",
+			": Верни квадраты в правильное место<br> .container {<br> display: flex;<br>"
+		]
+		const squarePositions = [
+			{
+				red: {
+					left: 'calc(50% - 25px)'
+				},
+				goalRed: {
+					left: "250px"
+				}
+			},
+			{
+				red: {
+					left: '250px'
+				},
+				goalRed: {
+					left: "0"
+				}
+			},
+			{
+				red: {
+					left: '0'
+				},
+				goalRed: {
+					 left: 'calc(50% - 25px)',
+					 top: 'calc(50% - 25px)',
+				}
+			},
+			{
+				red: {
+					left: 'calc(50% - 25px)',
+					top: 'calc(50% - 25px)',
+				},
+				blue: {
+					display: "block",
+					left: 'calc(50% + 25px)',
+					top: 'calc(50% - 25px)',
+				},
+				goalRed: {
+					left: '0',
+					top: '0',
+				},
+				goalBlue: {
+					display: "block",
+					left: '0',
+					top: '50px',
+				}
+			},
+			{
+				red: {
+					left: '0',
+					top: '0',
+				},
+				blue: {
+					left: '0',
+					top: '50px',
+				},
+				goalRed: {
+					left: '50px',
+					top: '0',
+				},
+				goalBlue: {
+					left: '200px',
+					top: '0',
+				}
+			},
+			{
+				red: {
+					left: '50px',
+					top: '0',
+				},
+				blue: {
+					left: '200px',
+					top: '0',
+				},
+				goalRed: {
+					left: '50%',
+					top: '250px',
+				},
+				goalBlue: {
+					left: 'calc(50% - 50px)',
+					top: '250px',
+				}
+			},
+			{
+				red: {
+					left: '50%',
+					top: '250px',
+				},
+				blue: {
+					left: 'calc(50% - 50px)',
+					top: '250px',
+				},
+				goalRed: {
+					left: 'calc(50% - 25px)',
+					top: '50px',
+				},
+				goalBlue: {
+					left: 'calc(50% - 25px)',
+					top: '200px',
+				}
+			},
+			{
+				red: {
+					left: 'calc(50% - 25px)',
+					top: '50px',
+				},
+				blue: {
+					left: 'calc(50% - 25px)',
+					top: '200px',
+				},
+			}
+		]
+		const arAnswers = [
+			'align-items:center;',
+			'align-items:flex-end;',
+			'align-items:flex-start;',
+			'align-items:center;justify-content:center;',
+			'flex-direction:column;',
+			'justify-content:space-around;',
+			'flex-direction:row-reverse;justify-content:center;align-items:flex-end;',
+			'align-items:center;flex-direction:column;justify-content:space-around;'
+		]
+
+		placeSquares();
+
+		function submitFormHandler(e) {
+			e.preventDefault();
+			const command = currentLevel < 3
+					? document.getElementById('command1').value.replaceAll(' ', '')
+					: document.getElementById('command2').value.replaceAll(' ', '');
+
+			if(command == arAnswers[currentLevel]) {
+				
+				// setTimeout(() => {
+
+				// 	}, 2000);
+
+					currentLevel++;
+					placeSquares();
+					document.getElementById('command1').value = '';
+					document.getElementById('command2').value = '';
+				if(currentLevel >= 3) {
+					document.getElementById('command1').style.display = "none";
+					document.getElementById('command2').style.display = "block";
+				}
+				
+			
+			}
+			else {
+				alert('Неправильная команда!');
+			}
+		}
+		function setCords(paramName, object) {
+			const coords = squarePositions[currentLevel-1];
+			if(coords[paramName]){
+				for (key in coords[paramName]) {
+					object.style[key] = coords[paramName][key];
+				}
+			}
+		};
+		function placeSquares() {
+			let textIndex = currentLevel < 4 ? 0 : 1;
+			label.innerHTML = currentLevel < 8 ? "Уровень "+(currentLevel +1)+arrLevelsText[textIndex] : "";
+			if(currentLevel > 0 ){
+				setCords('red', squareRed);
+				setCords('goalRed', squareGoalRed);
+				setCords('blue', squareBlue);
+				setCords('goalBlue', squareGoalBlue);
+			}
+			if(currentLevel == 8) {
+				
+				setTimeout(() => { window.location.href = "play3.html" }, 1000);
+				
+			}
+		}
+
+ const form = document.querySelector('form');
+ form.addEventListener('submit', submitFormHandler);
+</script>
+<script src="play2.js"></script>
+</main>
+<footer>
+    <ul>
+        <li>Адрес: ул. Луначарского, д. 24</li>
+        <li>E-mail: pat@edu.perm.ru</li>
+        <li>Справочник</li>
+    </ul>
+</footer>
+
+	</div>
+</body> 
+</html> 
+
+
+
+
