@@ -5,25 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
-    <title>EasyFlex</title>
+    <title>FlexEasy</title>
 </head>
 <body>
-    <div class="all_content">
-    <header>   
-        <h2> FlexEasy - Веселый и простой способ освоить Flexbox</h2>
-             <ul>
-         <li>
-             <a href="index.html">главная</a>
-         </li>
-         <li>
-             <a href="guide.html">справочник</a>
-                 </li>
-         <li>
-             <a href="play1_1.html">играть</a>
-         </li>
-     </ul>
-     
- </header>
+
+        <header>   
+            <div class="logomain">
+                <img class="logo" src="img/logo.png">
+                <h2>FlexEasy</h2>
+                <div class="navigate">
+                    
+                            <a class="left" href="index.html">главная</a>
+                            <a class="left" href="guide.html">справочник</a>
+                </div>
+                </div>
+            <div class="go">
+            <h2> Веселый и простой способ освоить Flexbox</h2>
+            <hr>
+            <p>Пройди три захватывающих раунда и изучи гибкую вёрстку flexbox</p>
+                 <button><a class="mi" href="play1_1.html">играть</a></button>
+         </div>
+     </header>
 
  <main>
     <div class="quiz-over-modal">
@@ -36,6 +38,7 @@
             <button id="btn-try-again">Попробовать снова</button>
         </div>
     </div>
+    <h2 class="play3_h2">Поздравляю! Ты на завершающем этапе, а это значит пора проверить свои знания и ответить верно на все вопросы. Удачи!</h2>
     <div class="quiz-container">
         <div class="question-number">
             <h3>Вопрос 
@@ -60,15 +63,27 @@
     </div>
 </main>
 
-<footer>
-    <script src="./js/play3.js"></script>
-    <ul>
-        <li>Адрес: ул. Луначарского, д. 24</li>
-        <li>E-mail: pat@edu.perm.ru</li>
-        <li>Справочник</li>
+
+    
+    <footer>
+        <script src="./js/play3.js"></script>
+        <ul class="description_me">
+          <li>FlexEasy</li>
+          <hr>
+          <li>разработчик: Кочева П.А.</li>
+        </ul>
+        <ul class="contacts_me">
+          <li>Контакты</li>
+          <hr>
+          <li>E-mail: pat@edu.perm.ru</li>
+      </ul>
+      <ul class="adress_me">
+        <li>Адрес</li>
+        <hr>
+        <li>г. Пермь, ул. Луначарского, 24</li>
     </ul>
-</footer>
-</div>
+    </footer>
+
 </body>
 </html>
 
