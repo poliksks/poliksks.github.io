@@ -44,5 +44,4 @@ for (let i = 0; i < squares.length; i++) {
     box.addEventListener('click', function() {
       alert(`This box should be moved to the ${i+1}th square.`);
     });
-    
   }

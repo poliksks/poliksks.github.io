@@ -1,4 +1,8 @@
-header li, footer li{
+* {
+  box-sizing:border-box;
+}
+/* стиль для шапки и подвала */
+header li, footer li, a{
     list-style: none;
     text-decoration: none;
   }
@@ -8,8 +12,10 @@ header li, footer li{
     color: aliceblue;
     padding: 10px;
   }
+
+  /* стиль для подвала */
   footer {
-background-image: url("../img/fon8.png");
+background-image: url("../img/fonfooter.png");
 display: flex;
 justify-content: space-around;
   }
@@ -22,11 +28,12 @@ justify-content: space-around;
     text-decoration: underline;
     font-weight: bold;
   }
-  hr{
-    color: #ffffff;
-  }
+.li_footer{
+  border-bottom: 2px solid #ffffff;
+}
+/* стиль для шапки */
   header{
-    background-image: url("../img/fon7.png");
+    background-image: url("../img/fonheader.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 70%;
@@ -37,7 +44,7 @@ justify-content: space-around;
     align-items: center;
     color: white;
   }
-  .logo{
+  .logomain img{
     width: 6%;
     margin: 10px;
   }
@@ -51,14 +58,29 @@ justify-content: space-around;
     font-size: 18px;
   }
  a{
-    color: aliceblue;
+    color: aliceblue; 
  }
-main h1 {
+ .left{
+  margin-right: 20%;
+  text-decoration: none !important;
+}
+
+.go{
+  line-height: 300%;
+  color: white;
+  width: 550px;
+  margin-top: 5%;
+margin-left: 10%;
+margin-right: auto 
+}
+ /* для главной и справочника */
+h1 {
     font-size: 36px;
     text-align: center;
     color: navy;
     margin-top: 50px;
     animation: fade-in 2s ease-in;
+    margin-bottom: 20px;
 }
 .content_index{
   display: flex;
@@ -77,26 +99,7 @@ main h1 {
 .content_main{
   width: 70%;
 }
-.left{
-  margin-right: 20%;
-  text-decoration: none !important;
-}
-.decorate{
-  text-decoration: none !important;
-background-color: rgb(55, 0, 109);
-}
-.go{
-  line-height: 300%;
-  color: white;
-  width: 550px;
-  margin-top: 5%;
-margin-left: 10%;
-margin-right: auto 
-}
-.mi{
-  text-decoration: none;
-  margin: none;
-}
+
 /* Стили для подзаголовков */
 main h2 {
     font-size: 20px;
@@ -135,27 +138,11 @@ main p {
     }
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-  }
-  
   .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  h1 {
-    font-size: 36px;
-    text-align: center;
-    color: navy;
-    margin-bottom: 30px;
-  }
-  
-  h2 {
-    font-size: 30px;
-
+   
   }
   
   .property {
@@ -168,7 +155,8 @@ main p {
     max-width: 200px;
     font-weight: bold;
   }
-  
+
+  /* не пон */
   .value {
     margin-right: 20px;
   }
@@ -186,6 +174,182 @@ main p {
       display: none;
     }
   }
+/* не пон */
+
+/* для 1 игры */
+/* стили основного блока */
+.wrap {
+  /* устанавливаем относительное позиционирование */
+  position: relative;
+  /* высота элементов */
+  height: 100%;
+  /* минимальная высота и отступы */
+  min-height: 500px;
+  padding-bottom: 20px;
+  margin: 20px 0 0 60px;
+  
+}
+.wrap p{
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  animation: fade-in 2s ease-out;
+}
+/* блок с игрой */
+.game {
+  /* добавляем трёхмерность для эффекта вращения */
+  transform-style: preserve-3d;
+  perspective: 500px;
+  /* пусть элементы занимают всё доступное им пространство */
+  min-height: 100%;
+  height: 100%;
+ 
+}
+
+
+/* стили карточек */
+.card {
+  /* параметры расположения, высоты и ширины карточки */
+  float: left;
+  width: 24%;
+  height: 32%;
+  /* отступы */
+  padding: 5px;
+  /* выравнивание по центру */
+  text-align: center;
+  /* подключаем блочные элементы и перспективу */
+  display: block;
+  perspective: 400px;
+  /* добавляем относительное позиционирование */
+  position: relative;
+  cursor: pointer;
+  z-index: 50;
+}
+
+/* настройки размера карт при максимальной ширине экрана 800 пикселей */
+@media (max-width: 800px) {
+  .card {
+    width: 30%;
+    height: 16.666%;
+  }
+}
+
+/* обратная сторона карточки */
+.card .inside {
+/* содержимое занимает весь размер карточки */
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* анимация переворачивания */
+  transform-style: preserve-3d;
+  transition: 0.4s ease-in-out;
+  /* у лицевой стороны будет белый фон */
+  background: white;
+}
+
+/* общие настройки для обеих сторон карточки */
+.card .front, .card .back {
+  /* рисуем границу */
+  border: 1px solid black;
+  /* прячем обратную сторону */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  /* абсолютное позиционирование */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* размеры и отступ */
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  
+}
+.front img{
+width: 600px;
+}
+.back img{
+  width: 30%;
+  height: 80%;
+  padding-top: 20px;
+}
+/* настройки изображения на лицевой и обратной стороне */
+.card .front img, .card .back img {
+  /* картинка занимает всю ширину */
+  max-width: 100%;
+  /* отображаем как блочный элемент, без отступов */
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  
+}
+
+/* настройки лицевой стороны */
+.card .front {
+  /* переворачиваем карточку обложкой вверх */
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* настройки при максимальной ширине экрана 800 пикселей */
+@media (max-width: 800px) {
+  .card .front {
+    padding: 5px;
+  }
+
+  .card .back {
+    padding: 0px;
+  }
+}
+
+  /* запускаем анимацию переворачивания при клике на карточку */
+.card .inside.picked, .card .inside.matched {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+}
+
+/* задаём ключевые кадры анимации совпадения */
+@keyframes matchAnim {
+  0% {
+  /*  зелёный фон */
+    background: #bcffcc;
+  }
+  100% {
+  /*  белый фон  */
+    backgroud: white;
+  }
+}
+
+/* и делаем то же самое для движка WebKit */
+@-webkit-keyframes matchAnim {
+  0% {
+    background: #bcffcc;
+  }
+  100% {
+    background: white;
+  }
+}
+
+  /* анимация совпадения пары */
+.card .inside.matched {
+  -webkit-animation: 1s matchAnim ease-in-out;
+          animation: 1s matchAnim ease-in-out;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
 
 
   /* для 2 игры */
@@ -196,6 +360,7 @@ main p {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-size: 18px;
 
   }
   .all_content{
@@ -209,7 +374,7 @@ main p {
   h1 {
     text-align: center;
   }
-  
+
   .container {
     max-width: 900px;
     margin: 0 auto;
@@ -224,7 +389,7 @@ main p {
     position: relative;
   }
   #game-board{
-    background-image: url("../img/fonda3.png");
+    background-image: url("../img/fonplay2.png");
   }
   .square {
     width: 50px;
@@ -239,14 +404,14 @@ main p {
 
   form {
     margin: 20px 0;
-    text-align: center;
+   
   }
   
-  label, input, button {
+  label, input, button, .btn_header {
     font-size: 20px;
   }
   
-  button {
+  button, .btn_header {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -289,7 +454,7 @@ main p {
     justify-content: space-between;
   }
 .play2 {
-  font-family: Arial, sans-serif;
+
   background-color: #f2f2f2;
   margin: 0;
   padding: 0;
@@ -344,10 +509,7 @@ main p {
   border-radius: 10px;
 }
 
-/*form {*/
-/*  margin: 20px 0;*/
-/*  text-align: center;*/
-/*}*/
+
 
 label, input, button {
 
@@ -368,15 +530,8 @@ button:hover {
   background-color: #3e8e41;
 }
 
-.alert {
-  background-color: #f44336;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  width: 50%;
-  margin: 20px auto;
-  text-align: center;
-}
+
+
 
 @media screen and (max-width: 600px) {
   .container {
@@ -396,7 +551,7 @@ button:hover {
   .quiz-container {
     max-width: 700px;
     min-height: 497px;
-    background-image: url(../img/a4.jpg);
+    background-image: url(../img/fonplay3.jpg);
     margin: 30px auto;
     border-radius: 10px;
     padding: 25px; 
@@ -536,19 +691,7 @@ button:hover {
   }
   
   /* для 3 игры */
-  .container_play2 {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-  }
-.play3_h2{
-  display: flex;
-  text-align: center;
-}
-  .container_play2 h1 {
-    text-align: center;
-  }
+  
   .container {
     max-width: 900px;
     margin: 0 auto;
@@ -580,6 +723,7 @@ button:hover {
   .game-command-field{
     margin-bottom: 10px;
     width: 220px;
+    
   }
   #game-result{
     display: none;
@@ -596,11 +740,6 @@ button:hover {
     left: 0;
     border-radius: 10px;
   }
-  
-  /*form {*/
-  /*  margin: 20px 0;*/
-  /*  text-align: center;*/
-  /*}*/
   
   label, input, button {
 

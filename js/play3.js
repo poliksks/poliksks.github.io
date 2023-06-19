@@ -66,26 +66,6 @@ const questions = [{
     rightAnswer: 2
 },
 {
-    question: 'Что позволяет удобно управлять расположением, потрядком, размерами и отступами между элементами веб-страниц?',
-    options: [
-        'flexqox',
-        'flexbox',
-        'boxreverse',
-        'кошачья лапка',
-    ],
-    rightAnswer: 1
-},
-{
-    question: 'display:flex',
-    options: [
-        'делает все дочерние элементы фиксированными',
-        'вставляет картинку в текст',
-        'делает все дочерние элементы резиновыми',
-        'располагает элементы в обратном порядке',
-    ],
-    rightAnswer: 2
-},
-{
     question: 'Элементы располагаются по направлению текста',
     options: [
         'align-items:flex-end',
@@ -144,16 +124,6 @@ const questions = [{
         'align-items:stretch',
     ],
     rightAnswer:2
-},
-{
-    question: 'Элементы выравниваются по центру контейнера',
-    options: [
-        'flex-direction:center',
-        'justify-content:space-between',
-        'justify-content:space-around',
-        'align-items:stretch',
-    ],
-    rightAnswer:0
 },
 ];
 
