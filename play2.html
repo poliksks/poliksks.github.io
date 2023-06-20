@@ -76,9 +76,6 @@
 			  box-sizing: border-box;
 			  display: none;
 		  }
-		  #command2{
-			  display: none;
-		  }
 	  </style>
   
   
@@ -97,9 +94,7 @@
 					  id="command-label"
 					  for="command1">
 				  </label>
-				  <input class="game-command-field"
-						 id="command1"
-						 name="command1"/>
+			
 				  <textarea
 					  class="game-command-field"
 					  id="command2"
@@ -269,9 +264,8 @@
   
 	 function submitFormHandler(e) {
 		 e.preventDefault();
-		 const command = currentLevel < 3
-				 ? document.getElementById('command1').value.replaceAll(' ', '').replaceAll('\n', '')
-				 : document.getElementById('command2').value.replaceAll(' ', '').replaceAll('\n', '');
+		 const command = document.getElementById('command2').value.replaceAll(' ', '').replaceAll('\n', '')
+			
   
 		 //предполагаем, что команда верная
 		 let result = true;
@@ -304,11 +298,6 @@
 			 currentLevel++;
 			  localStorage.setItem('level', currentLevel);
 			 placeSquares();
-  
-			 if(currentLevel >= 3) {
-				 document.getElementById('command1').style.display = "none";
-				 document.getElementById('command2').style.display = "block";
-			 }
 		 }
 		 else {
 		  showError('Неправильная команда!');
@@ -364,7 +353,6 @@
 			 document.getElementById('game-form').style.display = 'none'
 			 document.getElementById('game-result').style.display = 'block'
 		 }
-		 document.getElementById('command1').value = '';
 		 document.getElementById('command2').value = '';
 	 }
   

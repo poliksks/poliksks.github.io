@@ -155,13 +155,6 @@ main p {
     max-width: 200px;
     font-weight: bold;
   }
-
-  /* не пон */
-  .value {
-    margin-right: 20px;
-  }
-  
- 
   
   @media screen and (max-width: 480px) {
     h1 {
@@ -174,7 +167,6 @@ main p {
       display: none;
     }
   }
-/* не пон */
 
 /* для 1 игры */
 /* стили основного блока */
@@ -420,20 +412,14 @@ width: 600px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+  .error_message{
+    height: 10px;
+    margin-left: 10px;
+  }
   button:hover {
     background-color: #3e8e41;
   }
-  
-  .alert {
-    background-color: #f44336;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    width: 50%;
-    margin: 20px auto;
-    text-align: center;
-  }
+
   
   @media screen and (max-width: 600px) {
     .container {
@@ -451,6 +437,7 @@ width: 600px;
 
   .vivod{
     display: flex;
+    text-align: center;
     justify-content: space-between;
   }
 .play2 {
@@ -723,7 +710,7 @@ button:hover {
   .game-command-field{
     margin-bottom: 10px;
     width: 220px;
-    
+    height: 50px;
   }
   #game-result{
     display: none;
