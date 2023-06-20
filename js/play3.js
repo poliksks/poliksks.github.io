@@ -22,6 +22,10 @@ let score = 0; //итоговый результат викторины
 const correctAnswer = document.getElementById('correct-answer'), //кол-во правильнах ответов
     numberOfAllQuestions2 = document.getElementById('number-of-all-questions-2'), //кол-во всех вопрос в модальном окне
     btnTryAgain = document.getElementById('btn-try-again'); //кнопка начать викторину заново
+const btnBackToHome = document.getElementById('btn-back-to-home');
+btnBackToHome.addEventListener('click', function() {
+    location.href = 'index.html';
+});
 
 const questions = [{
         question: 'Flexbox используют для ...',

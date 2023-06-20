@@ -651,7 +651,7 @@ button:hover {
   }
   
   .quiz-over-modal .content {
-    background-color: navy;
+    background-color: rgb(255, 255, 255);
     padding: 30px;
     border-radius: 10px;
     flex-basis: 700px;
@@ -668,7 +668,7 @@ button:hover {
   .quiz-over-modal .content button {
     padding: 15px 50px;
     border: none;
-    background-color: #ff9800;
+    background-color: green;
     transition: all .2s ease-in-out;
     border-radius: 5px;
     cursor: pointer;
