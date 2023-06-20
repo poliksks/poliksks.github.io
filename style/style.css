@@ -24,9 +24,13 @@ justify-content: space-around;
     display: flex;
     align-items: center;
   }
-  header a:hover, footer a:hover{
+  footer a:hover{
     text-decoration: underline;
     font-weight: bold;
+  }
+  header a:hover{
+    color:#4CAF50;
+  background-color: #fff;  
   }
 .li_footer{
   border-bottom: 2px solid #ffffff;
@@ -36,7 +40,7 @@ justify-content: space-around;
     background-image: url("../img/fonheader.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 70%;
+    height: 75%;
   }
   .logomain{
     display: flex;
@@ -399,11 +403,11 @@ width: 600px;
    
   }
   
-  label, input, button, .btn_header {
+  label, input, button, .btn_header{
     font-size: 20px;
   }
   
-  button, .btn_header {
+  button, .btn_header{
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -411,6 +415,7 @@ width: 600px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
   }
   .error_message{
     height: 10px;
@@ -545,9 +550,7 @@ button:hover {
   }
   
   .question-number h3, .options div:hover  {
-    color:white;
     border-bottom: 1px solid #ccc;
-    padding-bottom:  10px;
   }
   
   #question {
