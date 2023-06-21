@@ -70,7 +70,7 @@
 						}
 				// если мы перевернули все карточки
 				if($(".matched").length == $(".card").length){
-					setTimeout(() => { window.location.href = "play1_2.html" }, 2000);
+					setTimeout(() => { window.location.href = "play1_4.html" }, 2000);
 				}
 			}
 		},
