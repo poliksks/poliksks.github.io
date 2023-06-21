@@ -8,15 +8,15 @@
     <title>FlexEasy</title>
 </head>
 <body>
-
+	<div class="wrapper">
     <header>   
         <div class="logomain">
             <img src="img/logo.png" alt="логотип">
-            <h2>FlexEasy</h2>
-            <div class="navigate">
-                        <a class="left" href="index.html">главная</a>
-                        <a class="left" href="guide.html">справочник</a>
-            </div>
+            <h2><a href="index.html">FlexEasy</a></h2>
+			<div class="navigate">
+				<a class="left" href="index.html">главная</a>
+				<a class="left" href="guide2.0.html">справочник</a>
+	</div>
             </div>
         <div class="go">
         <h2> Веселый и простой способ освоить Flexbox</h2>
@@ -111,11 +111,7 @@
 			  
 		  </div>
 	  </div>
-	  <!-- Это для проверки правильности команд, можно удалить-->
-  <!--	<div style="display:flex; width: 300px; background: gray; height: 300px">-->
-  <!--		<div style="width: 50px; height: 50px; background: red"></div>-->
-  <!--		<div style="width: 50px; height: 50px; background: blue"></div>-->
-  <!--	</div>-->
+
   <script>
 	  const squareRed = document.getElementById('square-red');
 	 const squareBlue = document.getElementById('square-blue');
@@ -124,8 +120,8 @@
 	 const label = document.getElementById('command-label');
 	 let currentLevel = 0;
 	 const arrLevelsText = [
-		 ": Верни квадрат в правильное место<br> .container {<br> display: flex;<br>",
-		 ": Верни квадраты в правильное место<br> .container {<br> display: flex;<br>"
+		 ": Поставь квадрат в отмеченное место<br> .square {<br> display: flex;<br>",
+		 ": Поставь квадрат в отмеченное место<br> .square {<br> display: flex;<br>"
 	 ]
 	 const squarePositions = [
 		 {
@@ -240,32 +236,34 @@
 	 ]
   
 	 const arAnswers = [
-		 ['align-items:center;'],
-		 ['align-items:flex-end;'],
-		 ['align-items:flex-start;'],
-		 [
-			 'align-items:center',
-			 'justify-content:center'
-			 
-		 ],
-		 ['flex-direction:column;'],
-		 ['justify-content:space-around;'],
-		 [
-			 'flex-direction:row-reverse',
-			 'justify-content:center',
-			 'align-items:flex-end'
-		 ],
-		 [
-			 'align-items:center',
-			 'flex-direction:column',
-			 'justify-content:space-around'
-		 ],
-	 ]
+			['justify-content:center;'],
+			['justify-content:flex-end;'],
+			['justify-content:flex-start;'],
+			[
+				'align-items:center',
+				'justify-content:center'
+			],
+			['flex-direction:column;'],
+			[
+				'justify-content:space-around',
+				'flex-direction:row'
+			],
+			[
+				'flex-direction:row-reverse',
+				'justify-content:center',
+				'align-items:flex-end'
+			],
+			[
+				'align-items:center',
+				'flex-direction:column',
+				'justify-content:space-around'
+			],
+		]
 	 placeSquares();
   
 	 function submitFormHandler(e) {
 		 e.preventDefault();
-		 const command = document.getElementById('command2').value.replaceAll(' ', '').replaceAll('\n', '')
+		 const command = document.getElementById('command2').value.replaceAll(' ', '').replaceAll('\n', '');
 			
   
 		 //предполагаем, что команда верная
@@ -301,7 +299,7 @@
 			 placeSquares();
 		 }
 		 else {
-		  showError('Неправильная команда!');
+		  showError('Ошибочка! Попробуй снова');
 		 }
 	 }
 	 function setCords(paramName, object) {
@@ -385,7 +383,7 @@
     <li>г. Пермь, ул. Луначарского, 24</li>
 </ul>
 </footer>
-
+</div>
 </body>
 </html>
 

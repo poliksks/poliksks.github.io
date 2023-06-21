@@ -70,7 +70,7 @@
 						}
 				// если мы перевернули все карточки
 				if($(".matched").length == $(".card").length){
-					setTimeout(() => { window.location.href = "play1_3.html" }, 2000);
+					setTimeout(() => { window.location.href = "play2.html" }, 2000);
 				}
 			}
 		},
@@ -118,33 +118,33 @@
 			// название
 			name: "justify-content",
 			// адрес картинки
-			img: "img/map3.png",
+			img: "img/map5.png",
 			// порядковый номер пары
 			id: 7
 		},
 		{
 			name: "justify-content",
-			img: "img/map4.png",
+			img: "img/map17.png",
 			id: 8
 		},
 		{
 			name: "justify-content",
-			img: "img/map5.png",
+			img: "img/map20.png",
 			id: 9
 		},
 		{
 			name: "justify-content",
-			img: "img/map11.png",
+			img: "img/map12.png",
 			id: 10
 		}, 
 		{
 			name: "пример кода",
-			img: "img/map9.png",
+			img: "img/map24.png",
 			id: 11
 		},
 		{
 			name: "justify-content",
-			img: "img/map25.png",
+			img: "img/map18.png",
 			id: 12
 		}, 
 	];

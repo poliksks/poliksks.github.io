@@ -7,7 +7,7 @@
 			this.$game = $(".game");
 			this.$modal = $(".modal");
 			this.$overlay = $(".modal-overlay");
-			this.$restartButton = $("button.restart");
+			// this.$restartButton = $("button.restart");
 			// доступ к классам
 			this.cardsArray = $.merge(cards, cards);
 			// перемешивание карточек
@@ -22,7 +22,6 @@
 			this.$cards = $(this.shuffle(this.cardsArray));
 		},
 
-		
 		setup: function(){
 			this.html = this.buildHTML();
 			this.$game.html(this.html);
@@ -77,14 +76,14 @@
 
 
 
-		// перезапуск игры
-		reset: function(){
-			// перемешивание карточек
-			this.shuffleCards(this.cardsArray);
-			// раскладывание
-			this.setup();
-			this.$game.show("slow");
-		},
+		// // перезапуск игры
+		// reset: function(){
+		// 	// перемешивание карточек
+		// 	this.shuffleCards(this.cardsArray);
+		// 	// раскладывание
+		// 	this.setup();
+		// 	this.$game.show("slow");
+		// },
 
 		shuffle: function(array){
 			var counter = array.length, temp, index;
@@ -117,33 +116,33 @@
 		{	
 			name: "flexbox",
 			// адрес картинки
-			img: "img/map1.png",
+			img: "img/map3.png",
 			// порядковый номер пары
 			id: 1
 		},
 		{
 			name: "display:flex",
-			img: "img/map2.png",
+			img: "img/map4.png",
 			id: 2
 		},
 		{
 			name: "justify-content",
-			img: "img/map13.png",
+			img: "img/map5.png",
 			id: 3
 		},
 		{
 			name: "justify-content",
-			img: "img/map21.png",
+			img: "img/map11.png",
 			id: 4
 		}, 
 		{
 			name: "justify-content",
-			img: "img/map22.png",
+			img: "img/map10.png",
 			id: 5
 		},
 		{
 			name: "главная ось",
-			img: "img/map23.png",
+			img: "img/map15.png",
 			id: 6
 		},
 

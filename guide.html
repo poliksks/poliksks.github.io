@@ -8,11 +8,11 @@
     <title>FlexEasy</title>
 </head>
 <body>
-   
+   <div class="wrapper">
     <header>   
         <div class="logomain">
             <img src="img/logo.png" alt="логотип">
-            <h2>FlexEasy</h2>
+            <h2><a href="index.html">FlexEasy</a></h2>
             <div class="navigate">
                         <a class="left" href="index.html">главная</a>
                         <a class="left" href="guide.html">справочник</a>
@@ -29,68 +29,108 @@
  <main>
     <div class="container">
         <h1>Справочник по Flexbox</h1>
-        <div class="flexbox-properties">
-          <h2>Контейнер</h2>
-          <div class="property">
-            <span class="name">display: flex</span>
-            <span class="description">Устанавливает элемент как flex-контейнер</span>
+        <p>Flexbox (от англ. flex — гибкий) — это модуль CSS, который позволяет удобно 
+          управлять расположением, порядком, размерами и отступами между элементами веб-страницы. 
+          Сайты, свёрстанные «флексами», получаются адаптивными, то есть выглядят хорошо на разных 
+          устройствах: ПК, ноутбуках, планшетах и смартфонах.</p>
+          <p>Когда мы задаём какому-то элементу значение flex для свойства display, мы превращаем этот элемент в флекс-контейнер. Внутри него начинает действовать флекс-контекст, его дочерние элементы начинают подчиняться свойствам флексбокса.
+
+            Снаружи флекс-контейнер выглядит как блочный элемент — занимает всю ширину родителя, следующие за ним элементы 
+            в разметке переносятся на новую строку.</p>
+            <p>Кто пользуется Flexbox
+              Верстальщики — позиционирование элементов с помощью языка стилей CSS относится к верстке, и в некоторых компаниях этим занимаются отдельные сотрудники.
+              Фронтенд-разработчики — другой подход в коммерческой разработке подразумевает, что версткой занимаются фронтендеры и они же «оживляют» интерфейсы с помощью JavaScript.
+              Фуллстак-разработчики — им тоже следует понимать, как работает верстка, хотя сталкиваются они с ней реже, чем предыдущие два специалиста.
+              Другие сотрудники — эпизодические задачи по верстке могут появляться у специалистов техподдержки, контент-менеджеров и прочих специалистов. Но они сталкиваются с такой необходимостью редко.
+
+         
+        <p>Преимущества Flexbox
+          Гибкость. Возможность гибко управлять положением элементов — одно из главных преимуществ флекса. Благодаря ей он намного удобнее предыдущих способов построения сеток и позволяет не задумываться о размерах элементов вплоть до пикселя. С помощью Flexbox можно настроить автоматическое выравнивание и распределение по оси, а не задавать все эти параметры вручную.
+          
+          Адаптивность. Flex отлично подходит для создания «резиновой» верстки, когда размеры элементов меняются в зависимости от параметров экрана. Такая верстка — хорошая практика по сравнению со статической, потому что лучше выглядит на разных устройствах. У нее ниже риск «развалиться» и стать нефункциональной.
+          
+          Удобное выравнивание. Выравнивание во флексбоксе — мощный и очень удобный инструмент. С его помощью можно в пару строк реализовать вещи, которые без флекса отняли бы куда больше усилий. Поэтому иногда флексбокс используют даже не по назначению — например, для точного центрирования контента внутри блока.
+          
+          Хорошая поддержка в браузерах. Flexbox появился довольно давно, и сейчас его поддерживают все современные браузеры. Поддержка отсутствует только в очень старых версиях интернет-обозревателей, которыми сейчас мало кто пользуется. В большинстве компаний считается, что поддерживать настолько старые браузеры уже не стоит.
+          
+          Адаптация под разные языки. Выше мы рассказывали про значения reverse-row, reverse-column и reverse-wrap и говорили, что они используются 
+          редко. Но это справедливо только для латиницы и кириллицы. Во многих языках практикуется чтение справа налево — эти свойства отлично 
+          подходят для адаптации веб-страниц под такие языки. Особенно удобно, если страница существует на разных языках с разными способами 
+          чтения: например, на английском и фарси.</p>
+          <div class="flexbox-properties">
+            <h2>Контейнер</h2>
+            <div class="property">
+              <span class="name">display: flex</span>
+              <span class="description">Устанавливает элемент как flex-контейнер</span>
+            </div>
+            <h2>flex-direction</h2>
+            <div class="property">
+              <span class="name">row</span>
+              <span class="description">Располагает элементы в строку</span>
+            </div>
+            <div class="property">
+              <span class="name">row-reverse</span>
+              <span class="description">Располагает элементы в строку в обратном порядке</span>
+            </div>
+            <div class="property">
+              <span class="name">column</span>
+              <span class="description">Располагает элементы в столбец</span>
+            </div>
+            <div class="property">
+              <span class="name">column-reverse</span>
+              <span class="description">Располагает элементы в столбец в обратном порядке</span>
+            </div>
+            <h2>justify-content</h2>
+            <div class="property">
+              <span class="name">flex-start</span>   
+              <span class="description">Выравнивает элементы по левому краю контейнера</span>
+            </div>
+            <div class="property">
+              <span class="name">flex-end</span>
+              <span class="description">Выравнивает элементы по правому краю контейнера</span>
+            </div>
+            <div class="property">
+              <span class="name">center</span>
+              <span class="description">Выравнивает элементы по центру контейнера</span>
+            </div>
+            <div class="property">
+              <span class="name">right</span>   
+              <span class="description">Выравнивает элементы по правому краю</span>
+            </div>
+            <div class="property">
+              <span class="name">left</span>   
+              <span class="description">Выравнивает элементы по левому краю</span>
+            </div>
+            <div class="property">
+              <span class="name">space-between</span>
+              <span class="description">Распределяет элементы с равным пространством между ними</span>
+            </div>
+            <div class="property">
+              <span class="name">space-around</span>
+              <span class="description">Распределяет элементы с равным пространством вокруг них</span>
+            </div>
+            <h2>align-items</h2>
+            <div class="property">
+              <span class="name">center</span>
+              <span class="description">Элементы выравнивается вертикально по центру контейнера</span>
+            </div>
+            <div class="property">
+              <span class="name">baseline</span>
+              <span class="description">Элементы отображаются на базовой линии контейнера</span>
+            </div>
+            <div class="property">
+              <span class="name">flex-end</span>
+              <span class="description">Элементы выравниваются по нижнему краю контейнера</span>
+            </div>
+            <div class="property">
+              <span class="name">flex-start</span>
+              <span class="description">Элементы выравниваются по верхнему краю контейнера</span>
+            </div>
+            <div class="property">
+              <span class="name">stretch</span>
+              <span class="description">Элементы растягиваются, чтобы заполнить контейнер</span>
+            </div>
           </div>
-          <h2>flex-direction</h2>
-          <div class="property">
-            <span class="name">row</span>
-            <span class="description">Располагает элементы в строку</span>
-          </div>
-          <div class="property">
-            <span class="name">row-reverse</span>
-            <span class="description">Располагает элементы в строку в обратном порядке</span>
-          </div>
-          <div class="property">
-            <span class="name">column</span>
-            <span class="description">Располагает элементы в столбец</span>
-          </div>
-          <div class="property">
-            <span class="name">column-reverse</span>
-            <span class="description">Располагает элементы в столбец в обратном порядке</span>
-          </div>
-          <h2>justify-content</h2>
-          <div class="property">
-            <span class="name">flex-start</span>   
-            <span class="description">Выравнивает элементы по левому краю контейнера</span>
-          </div>
-          <div class="property">
-            <span class="name">flex-end</span>
-            <span class="description">Выравнивает элементы по правому краю контейнера</span>
-          </div>
-          <div class="property">
-            <span class="name">center</span>
-            <span class="description">Выравнивает элементы по центру контейнера</span>
-          </div>
-          <div class="property">
-            <span class="name">space-between</span>
-            <span class="description">Распределяет элементы с равным пространством между ними</span>
-          </div>
-          <div class="property">
-            <span class="name">space-around</span>
-            <span class="description">Распределяет элементы с равным пространством вокруг них</span>
-          </div>
-          <h2>text-align</h2>
-          <div class="property">
-            <span class="name">left</span>
-            <span class="description">Текст выравнивается по левому краю элемента (значение по умолчанию)</span>
-          </div>
-          <div class="property">
-            <span class="name">center</span>
-            <span class="description">Текст выравнивается по центру элемента</span>
-          </div>
-          <div class="property">
-            <span class="name">right</span>
-            <span class="description">Текст выравнивается по правому краю элемента</span>
-          </div>
-          <div class="property">
-            <span class="name">justify</span>
-            <span class="description">Текст выравнивается по ширине</span>
-          </div>
-        </div>
       </div>
       
 </main>
@@ -109,6 +149,6 @@
   <li>г. Пермь, ул. Луначарского, 24</li>
 </ul>
 </footer>
-
+</div>
 </body>
 </html>

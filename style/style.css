@@ -2,20 +2,24 @@
   box-sizing:border-box;
 }
 html, body {
-  min-width: 1200px;
+  min-width: 320px;
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
   margin: 0;
   padding: 0;
-  height: 100%;
   font-size: 18px;
+  height: 100%;
 }
 /* стиль для шапки и подвала */
 header li, footer li, a{
     list-style: none;
     text-decoration: none;
   }
-
+.wrapper{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
  
   header ul, footer ul{
     color: aliceblue;
@@ -51,7 +55,6 @@ header .btn_header:hover{
     background-image: url("../img/fonheader.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 75%;
   }
   .logomain{
     display: flex;
@@ -60,7 +63,7 @@ header .btn_header:hover{
     color: white;
   }
   .logomain img{
-    width: 6%;
+    width: 2em; 
     margin: 10px;
   }
   .navigate{
@@ -70,8 +73,31 @@ header .btn_header:hover{
     text-decoration: none;
     display: flex;
     margin-right: 40%;
-    font-size: 24px;
+    font-size: 18px;
   }
+  @media screen and (max-width: 320px){
+     .navigate{
+       position: static; 
+       display: flex; 
+       flex-direction: column;
+       font-size: 14px;
+       } 
+       .left{ 
+        margin: 0; 
+        font-size: 14px;
+      }
+       .logomain h2{ 
+        font-size: 0.1em;
+         font-size: 14px;
+      } 
+      .logomain {
+        font-size: 14px; 
+           display: flex;
+        flex-direction: row;
+      }
+    
+    } 
+   
  a{
     color: aliceblue; 
  }
@@ -196,6 +222,22 @@ main p {
   margin: 20px 0 0 60px;
   
 }
+@media (max-width: 320px) {
+   .wrap { 
+    margin: 5px; 
+    min-height: 150px;
+     padding-bottom: 5px; 
+    }
+     .card
+      {
+         width: 70%;
+          height: 35%;
+           padding: 3px;
+            font-size: 10px; 
+          } 
+        }
+
+
 .wrap p{
   font-size: 18px;
   line-height: 1.5;
@@ -500,7 +542,14 @@ width: 600px;
   left: 0;
   border-radius: 10px;
 }
+@media screen and (max-width: 320px){ 
+  .game-form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
+}
 
 
 label, input, button {
