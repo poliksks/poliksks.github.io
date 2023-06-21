@@ -1,6 +1,15 @@
 * {
   box-sizing:border-box;
 }
+html, body {
+  min-width: 1200px;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 18px;
+}
 /* стиль для шапки и подвала */
 header li, footer li, a{
     list-style: none;
@@ -29,9 +38,11 @@ justify-content: space-around;
     font-weight: bold;
   }
   header a:hover{
-    color:#4CAF50;
-  background-color: #fff;  
+   color: #4CAF50
   }
+header .btn_header:hover{
+  background-color: #fff;
+}
 .li_footer{
   border-bottom: 2px solid #ffffff;
 }
@@ -59,7 +70,7 @@ justify-content: space-around;
     text-decoration: none;
     display: flex;
     margin-right: 40%;
-    font-size: 18px;
+    font-size: 24px;
   }
  a{
     color: aliceblue; 
@@ -349,16 +360,7 @@ width: 600px;
 
 
   /* для 2 игры */
-  html, body {
-    min-width: 1280px;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-size: 18px;
 
-  }
   .all_content{
     min-height: 100%;
     display: flex;
@@ -421,9 +423,7 @@ width: 600px;
     height: 10px;
     margin-left: 10px;
   }
-  button:hover {
-    background-color: #3e8e41;
-  }
+
 
   
   @media screen and (max-width: 600px) {
@@ -549,7 +549,7 @@ button:hover {
     padding: 25px; 
   }
   
-  .question-number h3, .options div:hover  {
+  .question-number h3, .options div:hover{
     border-bottom: 1px solid #ccc;
   }
   
